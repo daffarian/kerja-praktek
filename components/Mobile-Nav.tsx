@@ -15,7 +15,6 @@ import { links } from '@/lib/dataObject';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
-
 export default function MobileNav() {
   // State untuk menyimpan status sheet
   const [isOpen, setIsOpen] = useState(false);
@@ -45,9 +44,9 @@ export default function MobileNav() {
                       href={link.href}
                       onClick={() => setIsOpen(!isOpen)}
                       className={clsx(
-                        'flex flex-row gap-2 items-center hover:bg-sky-100 hover:text-sky-500 px-2 py-4 rounded-md',
+                        'flex flex-row gap-2 items-center hover:bg-sky-100 hover:text-sky-500 py-4 rounded-md',
                         {
-                          'bg-sky-100 text-sky-500' : link.href === pathname
+                          'bg-sky-100 text-sky-500': link.href === pathname
                         }
                       )}
                     >
@@ -59,28 +58,33 @@ export default function MobileNav() {
               } else {
                 return (
                   // Render dengan accordion jika memiliki sublink
-                  <Accordion type="single" collapsible key={link.id}>
+                  <Accordion type="single" collapsible key={link.id} defaultValue='item-1'>
                     <AccordionItem value="item-1">
-                      <AccordionTrigger className="flex flex-row gap-2 items-center hover:bg-sky-100 px-2 py-4 rounded-md">
+                      <AccordionTrigger className="flex flex-row items-center hover:underline gap-2 py-4 rounded-md">
                         {link.icon}
                         {link.name}
                       </AccordionTrigger>
                       <AccordionContent>
-                        {link.subLinks.map((sublink) => (
-                          <div className='flex flex-col gap-2'>
-                            <Link
-                              href={sublink.href}
-                              onClick={() => setIsOpen(!isOpen)}
-                              className={clsx(
-                                'flex flex-row  pl-10 items-center hover:bg-sky-100 px-2 py-2 rounded-md',
-                                {'bg-sky-100 text-sky-500': sublink.href === pathname}
-                              )}
-                            >
-                              {sublink.name}
-                            </Link>
-                            <hr />
-                          </div>
-                        ))}
+                        <div className="flex flex-col gap-1">
+                          {link.subLinks.map((sublink) => (
+                            <>
+                              <hr />
+                              <Link
+                                href={sublink.href}
+                                onClick={() => setIsOpen(!isOpen)}
+                                className={clsx(
+                                  'flex flex-row  pl-10 items-center hover:bg-sky-100 border-slate-200 py-2 rounded-md',
+                                  {
+                                    'bg-sky-100 text-sky-500':
+                                      sublink.href === pathname
+                                  }
+                                )}
+                              >
+                                {sublink.name}
+                              </Link>
+                            </>
+                          ))}
+                        </div>
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
@@ -88,6 +92,15 @@ export default function MobileNav() {
               }
             })}
           </div>
+          <Link href={'/'}>
+          <Button
+            variant={'destructive'}
+            className="inline-flex w-full justify-between mt-10"
+          >
+            Logout{Icons.logout}
+          </Button>
+          
+          </Link>
         </SheetContent>
       </Sheet>
     </header>

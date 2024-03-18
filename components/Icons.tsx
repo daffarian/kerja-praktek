@@ -1,4 +1,4 @@
-import { AlignRight, Activity, Home, Map, LogIn, Server, Radar, NotepadText, Settings, Wrench } from 'lucide-react';
+import { AlignRight, Activity, Home, Map, LogIn, Server, Radar, NotepadText, Settings, Wrench, LogOut } from 'lucide-react';
 
 const primary = 'text-sky-500';
 export const Icons = {
@@ -7,6 +7,7 @@ export const Icons = {
   status: <Activity className={primary} />,
   wilayah: <Map className={primary} />,
   login: <LogIn color="white" />,
+  logout: <LogOut color='white'/>,
   alat: <Server className={primary}/>,
   ping: <Radar className={primary}/>,
   pool: <NotepadText className={primary}/>,

@@ -1,4 +1,17 @@
-import { AlignRight, Activity, Home, Map, LogIn, Server, Radar, NotepadText, Settings, Wrench, LogOut } from 'lucide-react';
+import {
+  AlignRight,
+  Activity,
+  Home,
+  Map,
+  LogIn,
+  Server,
+  NotepadText,
+  Settings,
+  Wrench,
+  LogOut,
+  ListOrdered,
+  LucideProps
+} from 'lucide-react';
 
 const primary = 'text-sky-500';
 export const Icons = {
@@ -7,10 +20,10 @@ export const Icons = {
   status: <Activity className={primary} />,
   wilayah: <Map className={primary} />,
   login: <LogIn color="white" />,
-  logout: <LogOut color='white'/>,
-  alat: <Server className={primary}/>,
-  ping: <Radar className={primary}/>,
-  pool: <NotepadText className={primary}/>,
-  settings: <Settings className={primary}/>,
-  maintenance: <Wrench className={primary}/>
+  logout: <LogOut color="white" />,
+  alat: <Server className={primary} />,
+  ping: <NotepadText className={primary} />,
+  settings: <Settings className={primary} />,
+  maintenance: <Wrench className={primary} />,
+  pool: <ListOrdered className={primary}/>
 };

@@ -13,21 +13,23 @@ export async function DisplayCardContainer() {
           </div>
           <div className="p-5">
             <table>
-              <tr>
-                <th className='text-left w-1/4'>IP</th>
-                <td>:</td>
-                <td>{item.ip}</td>
-              </tr>
-              <tr>
-                <th className='text-left'>Long</th>
-                <td>:</td>
-                <td>{item.longitude}</td>
-              </tr>
-              <tr>
-                <th className='text-left'>Lat</th>
-                <td>:</td>
-                <td>{item.latitude}</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <th className="text-left w-1/4">IP</th>
+                  <td>:</td>
+                  <td>{item.ip}</td>
+                </tr>
+                <tr>
+                  <th className="text-left">Long</th>
+                  <td>:</td>
+                  <td>{item.longitude}</td>
+                </tr>
+                <tr>
+                  <th className="text-left">Lat</th>
+                  <td>:</td>
+                  <td>{item.latitude}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </DisplayCard>

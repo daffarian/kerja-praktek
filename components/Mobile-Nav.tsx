@@ -66,7 +66,6 @@ export default function MobileNav() {
                       type="single"
                       collapsible
                       key={link.id}
-                      defaultValue="item-1"
                     >
                       <AccordionItem value="item-1">
                         <AccordionTrigger className="flex flex-row items-center hover:underline gap-2 px-2 py-4 rounded-md">
@@ -79,6 +78,7 @@ export default function MobileNav() {
                               <>
                                 <hr />
                                 <Link
+                                  key={sublink.id}
                                   href={sublink.href}
                                   onClick={() => setIsOpen(!isOpen)}
                                   className={clsx(

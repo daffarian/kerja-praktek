@@ -1,8 +1,9 @@
-import MobileNav from "@/components/Mobile-Nav"
+import { Skeleton } from "@/components/ui/skeleton";
 export default function Page(){
-  return(
+  return (
     <main>
       <h1>Dashboard</h1>
+      
     </main>
-    )
+  );
 }

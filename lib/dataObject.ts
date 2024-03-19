@@ -2,42 +2,42 @@ import { Icons } from "@/components/Icons";
 // Navigasi Link
 export const links = [
   {
-    id: '1',
+    id: '01',
     name: 'Dashboard',
     href: '/dashboard',
     icon: Icons.dasboard,
     subLinks: null
   },
   {
-    id: '2',
+    id: '02',
     name: 'Alat',
     href: '/dashboard/alat',
     icon: Icons.alat,
     subLinks: null
   },
   {
-    id: '3',
+    id: '03',
     name: 'Wilayah',
     href: '/dashboard/wilayah',
     icon: Icons.wilayah,
     subLinks: null
   },
   {
-    id: '4',
+    id: '04',
     name: 'Log Ping',
     href: '/dashboard/log-ping',
     icon: Icons.ping,
     subLinks: null
   },
   {
-    id: '5',
+    id: '05',
     name: 'Pool Update',
     href: '/dashboard/pool-update',
     icon: Icons.pool,
     subLinks: null
   },
   {
-    id: '6',
+    id: '06',
     name: 'Settings',
     href: '/dashboard/settings',
     icon: Icons.settings,
@@ -60,7 +60,7 @@ export const links = [
     ]
   },
   {
-    id: '7',
+    id: '07',
     name: 'Maintenance',
     href: '/dashboard/maintenance',
     icon: Icons.maintenance,

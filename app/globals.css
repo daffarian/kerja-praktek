@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer{
-  *{
+  p, div, ul, li, a, h1, h2, h3{
     @apply text-slate-500
   }
 }

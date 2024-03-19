@@ -62,12 +62,8 @@ export default function MobileNav() {
                 } else {
                   return (
                     // Render dengan accordion jika memiliki sublink
-                    <Accordion
-                      type="single"
-                      collapsible
-                      key={link.id}
-                    >
-                      <AccordionItem value="item-1">
+                    <Accordion type="single" key={link.id} collapsible>
+                      <AccordionItem key={link.id} value="item-1">
                         <AccordionTrigger className="flex flex-row items-center hover:underline gap-2 px-2 py-4 rounded-md">
                           {link.icon}
                           {link.name}
@@ -75,7 +71,7 @@ export default function MobileNav() {
                         <AccordionContent>
                           <div className="flex flex-col gap-1">
                             {link.subLinks.map((sublink) => (
-                              <>
+                              <div key={sublink.id}>
                                 <hr />
                                 <Link
                                   key={sublink.id}
@@ -91,7 +87,7 @@ export default function MobileNav() {
                                 >
                                   {sublink.name}
                                 </Link>
-                              </>
+                              </div>
                             ))}
                           </div>
                         </AccordionContent>

@@ -1,15 +1,13 @@
-import { Skeleton } from "@/components/ui/skeleton";
-import { Suspense } from "react";
-import CardAlat from "./CardAlat";
-
-export default async function Page(){
-  
+import { Suspense } from 'react';
+import TabelAlat from './TabelAlat';
+import { TableSkeleton } from '@/components/Skeleton';
+export default async function Page() {
   return (
-    <main className="flex justify-center pt-5">
-      <Suspense
-        fallback={<Skeleton className="h-[125px] w-[250px] rounded-md" />}
-      >
-        <CardAlat />
+    <main className="flex flex-col justify-center pt-5">
+      <Suspense fallback={<TableSkeleton />}>
+        <div className="overflow-x-auto px-5">
+          <TabelAlat />
+        </div>
       </Suspense>
     </main>
   );

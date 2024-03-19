@@ -1,13 +1,11 @@
-import { Suspense } from 'react';
-import TabelAlat from './TabelAlat';
-import { TableSkeleton } from '@/components/Skeleton';
+import { DisplayCardContainer } from "@/components/Container";
+import { DisplayCardSkeleton } from "@/components/Skeleton";
+import { Suspense } from "react";
 export default async function Page() {
   return (
-    <main className="flex flex-col justify-center pt-5">
-      <Suspense fallback={<TableSkeleton />}>
-        <div className="overflow-x-auto px-5">
-          <TabelAlat />
-        </div>
+    <main className="flex flex-col justify-center w-full p-5">
+      <Suspense fallback={<DisplayCardSkeleton />}>
+        <DisplayCardContainer />
       </Suspense>
     </main>
   );

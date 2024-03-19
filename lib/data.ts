@@ -6,9 +6,9 @@ export async function fetchAlat() {
   noStore();
   try {
     await new Promise((resolve) => setTimeout(resolve, 5000));
-    const data = await sql`SELECT * FROM tblalat`;
+    const data = await sql`SELECT * FROM get_alat()`;
     return data;
-  } catch (err) {
+  } catch (err) {   
     console.error(`fetch alat gagal : ${err}`);
   }
 }

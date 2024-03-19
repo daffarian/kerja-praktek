@@ -4,7 +4,7 @@ export default async function TabelAlat() {
   const alat = await fetchAlat();
   return (
     <>
-      <table className="table-fixed overflow-x-auto">
+      {/* <table className="table-fixed overflow-x-auto">
         <thead>
           <tr>
             <th className="w-1/12">NO</th>
@@ -27,7 +27,7 @@ export default async function TabelAlat() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
     </>
   );
 }

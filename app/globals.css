@@ -6,4 +6,11 @@
   p, div, ul, li, a, h1, h2, h3{
     @apply text-slate-500
   }
+
+  .display-card {
+  border-radius: 30px;
+  background: rgb(255, 255, 255);
+  box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+}
 }

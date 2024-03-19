@@ -8,7 +8,7 @@ export async function DisplayCardContainer() {
     <div className="grid gap-10 md:grid-cols-2">
       {alat?.map((item: any, index: number) => (
         <DisplayCard key={index + 1}>
-          <div className="bg-sky-500 font-bold text-white rounded-t-2xl p-5 text-center">
+          <div className="bg-sky-500 font-bold text-white rounded-t-[30px] p-5 text-center">
             {item.namaalat} @ {item.namawilayah}
           </div>
           <div className="p-5">

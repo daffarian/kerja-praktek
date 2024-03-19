@@ -1,5 +1,3 @@
 export default function Page(){
-  return(
-    <h1>Settings Alat Page</h1>
-  )
+  return <h1 className="pt-24">Settings Alat Page</h1>;
 }

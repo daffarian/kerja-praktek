@@ -1,5 +1,5 @@
 export default function Page(){
   return (
-    <h1>Wilayah</h1>
+    <h1 className="pt-24">Wilayah</h1>
   )
 }

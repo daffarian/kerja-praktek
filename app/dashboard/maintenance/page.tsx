@@ -1,5 +1,3 @@
 export default function Page(){
-  return (
-    <h1>Maintenance Page</h1>
-  )
+  return <h1 className="pt-24">Maintenance Page</h1>;
 }

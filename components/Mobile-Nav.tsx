@@ -36,16 +36,16 @@ export default function MobileNav() {
 
   useEffect(() => {
     if (clientWindowHeight > 10) {
-      setStyle('bg-white/60 backdrop-blur-md shadow-lg px-2');
+      setStyle(' shadow-lg px-2');
     } else {
       setStyle(``);
     }
   }, [clientWindowHeight]);
   return (
     <header
-      className={`fixed w-full top-0 left-0 z-10 transition-all duration-300 rounded-b-3xl ${style}`}
+      className={`fixed w-full top-0 left-0 z-10 transition-all bg-white/60 backdrop-blur-md duration-300 rounded-b-3xl ${style}`}
     >
-      <div className={` w-full flex flex-row justify-between p-4 `}>
+      <div className={` w-full flex flex-row justify-between px-4 py-5 `}>
         {/* Logo Aplikasi */}
         <Author />
         {/* Sheet */}

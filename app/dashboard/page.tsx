@@ -1,7 +1,7 @@
 import { Skeleton } from "@/components/ui/skeleton";
 export default function Page(){
   return (
-    <main>
+    <main className="pt-24">
       <h1>Dashboard</h1>
       
     </main>

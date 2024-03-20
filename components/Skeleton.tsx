@@ -73,3 +73,28 @@ export function DisplayCardSkeleton() {
     </div>
   );
 }
+
+// Card Wilayah Skeleton
+export function CardWilayahSkeleton(){
+  return (
+    <div className="flex flex-col gap-8">
+      {[...Array(3)].map(
+        (
+          _,
+          index // Perulangan sebanyak 10 kali
+        ) => (
+          <DisplayCard>
+            <div className="flex flex-row">
+              <div className="w-1/3 text-center text-nowrap font-bold text-white rounded-l-[30px]">
+                <Skeleton className="w-full h-16 rounded-l-[30px]" />
+              </div>
+              <div className="py-5 px-2 font-bold text-left w-full">
+                <Skeleton className="w-3/4 h-5" />
+              </div>
+            </div>
+          </DisplayCard>
+        )
+      )}
+    </div>
+  );
+}

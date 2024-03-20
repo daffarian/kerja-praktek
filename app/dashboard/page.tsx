@@ -1,4 +1,3 @@
-import { Skeleton } from "@/components/ui/skeleton";
 export default function Page(){
   return (
     <main className="pt-24">

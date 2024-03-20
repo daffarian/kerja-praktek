@@ -1,5 +1,12 @@
-export default function Page(){
+import { CardWilayahContainer } from '@/components/Container';
+import { CardWilayahSkeleton } from '@/components/Skeleton';
+import { Suspense } from 'react';
+export default function Page() {
   return (
-    <h1 className="pt-24">Wilayah</h1>
-  )
+    <main className="flex flex-col justify-center pt-24 w-full p-5">
+      <Suspense fallback={<CardWilayahSkeleton />}>
+        <CardWilayahContainer />
+      </Suspense>
+    </main>
+  );
 }

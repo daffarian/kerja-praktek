@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/tooltip';
 
 export default function DbStatus() {
-  const [status, setStatus] = useState(false);
+  const [status, setStatus] = useState(true);
 
   const getStatus = useCallback(async () => {
     const data = await getStatusDb();

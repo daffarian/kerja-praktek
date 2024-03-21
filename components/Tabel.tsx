@@ -18,6 +18,7 @@ import {
   TableHeader,
   TableRow
 } from '@/components/ui/table';
+import clsx from 'clsx';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -53,8 +54,10 @@ export function DataTable<TData, TValue>({
   }
 
   return (
-    <div className='mt-10'>
-      <hr />
+    <div className="mt-10">
+      <div className="w-full">
+        <hr />
+      </div>
       <div className="flex w-full flex-row items-center py-4 justify-between">
         <div className="flex flex-row items-center justify-between gap-5">
           <span className="text-sm">Item per page</span>
@@ -89,8 +92,8 @@ export function DataTable<TData, TValue>({
           </Button>
         </div>
       </div>
-      <div className="rounded-md border">
-        <Table>
+      <div className="rounded-md border overflow-x-auto">
+        <Table className="">
           <TableHeader className="bg-sky-500 rounded-t-md hover:bg-sky-500">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id} className="hover:bg-sky-500">
@@ -120,7 +123,11 @@ export function DataTable<TData, TValue>({
                   data-state={row.getIsSelected() && 'selected'}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="text-nowrap">
+                    <TableCell key={cell.id} className={clsx('text-nowrap',
+                    {'text-green-500': cell.getValue() == 'UP'},{
+                      'text-red-500': cell.getValue() === 'DOWN'
+                    }
+                    )}>
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()

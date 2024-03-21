@@ -36,7 +36,7 @@ export default function MobileNav() {
 
   useEffect(() => {
     if (clientWindowHeight > 10) {
-      setStyle(' shadow-lg px-2');
+      setStyle(' shadow-lg px-4');
     } else {
       setStyle(``);
     }

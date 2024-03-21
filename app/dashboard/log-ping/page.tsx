@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { TableSkeleton } from '@/components/Skeleton';
 export default async function Page() {
   return (
-    <div className="container mx-auto pt-24">
+    <div className="mx-auto pt-24 container">
       <Suspense fallback={<TableSkeleton />}>
         <TabelLogPing />
       </Suspense>

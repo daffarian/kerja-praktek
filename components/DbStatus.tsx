@@ -32,7 +32,13 @@ export default function DbStatus() {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger>
+        <TooltipTrigger
+          disabled={true}
+          onClick={(event) => {
+            event.stopPropagation();
+            event.preventDefault();
+          }}
+        >
           <div
             className={clsx(
               'w-3 h-3 rounded-full shadow-inner m-4',
@@ -43,8 +49,12 @@ export default function DbStatus() {
             )}
           ></div>
         </TooltipTrigger>
-        <TooltipContent className='bg-white text-green-400 text-xs border-[1px] border-slate-200'>
-          {status == true ? <p className='text-green-400'>DB Conected</p>: <p className='text-red-500'>DB Conection Lost</p>}
+        <TooltipContent className="bg-white text-green-400 text-xs border-[1px] border-slate-200">
+          {status == true ? (
+            <p className="text-green-400">DB Conected</p>
+          ) : (
+            <p className="text-red-500">DB Conection Lost</p>
+          )}
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

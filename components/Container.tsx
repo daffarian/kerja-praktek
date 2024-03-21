@@ -6,7 +6,7 @@ export async function DisplayCardContainer() {
   const alat = await fetchAlat();
 
   return (
-    <div className="grid gap-10 md:grid-cols-2">
+    <div className="grid gap-10 md:grid-cols-2 py-10">
       {alat?.map((item: any, index: number) => (
         <DisplayCard key={index + 1}>
           <div className="bg-sky-500 font-bold text-white rounded-t-[30px] p-5 text-center">
@@ -42,7 +42,7 @@ export async function DisplayCardContainer() {
 export async function CardWilayahContainer(){
   const wilayah = await fetchWilayah();
   return (
-    <div className='grid gap-8'>
+    <div className='grid gap-8 py-10'>
       {wilayah.map((item:any) => (
         <DisplayCard key={item.id_wilayah}>
           <div className="flex flex-row">

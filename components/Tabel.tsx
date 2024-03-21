@@ -55,7 +55,7 @@ export function DataTable<TData, TValue>({
   }
 
   return (
-    <div className="mt-5">
+    <div className="mt-5 pb-10">
       <div className="w-full">
         <hr />
       </div>

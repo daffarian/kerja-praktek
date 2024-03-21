@@ -1,22 +1,20 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import type { Metadata } from 'next';
+import { plusJakarta } from '@/components/fonts';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Mantau App",
-  description: "Aplikasi Monitoring VPN Seluruh Area Kerja PT Delameta Bilano",
+  title: 'Mantau App',
+  description: 'Aplikasi Monitoring VPN Seluruh Area Kerja PT Delameta Bilano'
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={plusJakarta.className}>{children}</body>
     </html>
   );
 }

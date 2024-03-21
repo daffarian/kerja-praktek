@@ -38,6 +38,6 @@ export default function Page() {
     //   <Button onClick={handleRefresh}>Refresh</Button>
     //   <DataTable columns={columns} data={data} />
     // </div>
-    <main className='pt-24 pl-5'>Dashboard</main>
+    <main className='pt-24 pl-5'><p>Dashboard</p></main>
   );
 }

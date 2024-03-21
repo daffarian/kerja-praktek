@@ -35,7 +35,7 @@ export default function DbStatus() {
         <TooltipTrigger>
           <div
             className={clsx(
-              'w-3 h-3 rounded-full shadow-inner',
+              'w-3 h-3 rounded-full shadow-inner m-4',
               {
                 'bg-green-400': status === true
               },

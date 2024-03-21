@@ -41,7 +41,7 @@ export function TableSkeleton() {
 // Display Card Alat Skeleton
 export function DisplayCardSkeleton() {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 py-10">
       {[...Array(3)].map(
         (
           _,
@@ -66,7 +66,7 @@ export function DisplayCardSkeleton() {
 // Card Wilayah Skeleton
 export function CardWilayahSkeleton() {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 py-10">
       {[...Array(8)].map(
         (
           _,

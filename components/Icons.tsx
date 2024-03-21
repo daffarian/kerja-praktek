@@ -10,7 +10,9 @@ import {
   Wrench,
   LogOut,
   ListOrdered,
-  LucideProps
+  LucideProps,
+  RefreshCcw,
+  Search
 } from 'lucide-react';
 
 const primary = 'text-sky-500';
@@ -25,5 +27,7 @@ export const Icons = {
   ping: <NotepadText className={primary} />,
   settings: <Settings className={primary} />,
   maintenance: <Wrench className={primary} />,
-  pool: <ListOrdered className={primary}/>
+  pool: <ListOrdered className={primary} />,
+  search: Search,
+  refresh: <RefreshCcw color="white" />
 };

@@ -1,17 +1,17 @@
 'use client';
-import { LogPing, columns } from './columns';
-import { DataTable } from './data-table';
+import { columns } from '@/lib/definition';
+import { DataTable } from './Tabel';
 import { fetchLogPing } from '@/lib/data';
-import { ButtonRefresh } from '@/components/Button';
 import { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
+import { Icons } from './Icons';
 
-export default function Page() {
+export default function TabelLogPing() {
   const [data, setData] = useState([]);
   const [click, setClick] = useState(0);
 
   const getData = useCallback(async () => {
-    const data = await fetchLogPing(1000);
+    const data = await fetchLogPing(100);
     console.log('get Data');
     setData(data);
   }, []);
@@ -24,7 +24,7 @@ export default function Page() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       getData();
-    }, 10000);
+    }, 5000);
     getData();
 
     // Membersihkan interval saat komponen di-unmount
@@ -34,10 +34,11 @@ export default function Page() {
   }, [click, getData]);
 
   return (
-    // <div className="container mx-auto pt-24">
-    //   <Button onClick={handleRefresh}>Refresh</Button>
-    //   <DataTable columns={columns} data={data} />
-    // </div>
-    <main className='pt-24 pl-5'>Dashboard</main>
+    <div className="">
+      <Button className="focus:rotate-180" onClick={handleRefresh}>
+        <span className='active:rotate-90 inline-block'>{Icons.refresh}</span>
+      </Button>
+      <DataTable columns={columns} data={data} />
+    </div>
   );
 }

@@ -28,14 +28,26 @@ export async function fetchWilayah() {
 
 // Fetch Log Ping
 export async function fetchLogPing(limit: number) {
-  noStore()
-  
+  noStore();
+
   try {
     // await new Promise((resolve) => setTimeout(resolve, 3000));
     const data =
-      await sql`SELECT * FROM tbllogping ORDER BY date DESC LIMIT ${limit}`
+      await sql`SELECT * FROM tbllogping ORDER BY date DESC LIMIT ${limit}`;
     return data;
   } catch (err) {
     console.error(`fetch alat gagal : ${err}`);
+  }
+}
+
+// Get Status Db
+export async function getStatusDb() {
+  noStore();
+  try {
+    await sql`SELECT 1`;
+    return true;
+  } catch (err) {
+    console.error(err);
+    return false;
   }
 }

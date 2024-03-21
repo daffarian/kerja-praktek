@@ -3,11 +3,10 @@ import { getStatusDb } from '@/lib/data';
 import { useCallback, useState, useEffect } from 'react';
 import clsx from 'clsx';
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '@/components/ui/tooltip';
+  Popover,
+  PopoverContent,
+  PopoverTrigger
+} from '@/components/ui/popover';
 
 export default function DbStatus() {
   const [status, setStatus] = useState(true);
@@ -30,33 +29,25 @@ export default function DbStatus() {
   }, [getStatus]);
 
   return (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger
-          disabled={true}
-          onClick={(event) => {
-            event.stopPropagation();
-            event.preventDefault();
-          }}
-        >
-          <div
-            className={clsx(
-              'w-3 h-3 rounded-full shadow-inner m-4',
-              {
-                'bg-green-400': status === true
-              },
-              { 'bg-red-500': status === false }
-            )}
-          ></div>
-        </TooltipTrigger>
-        <TooltipContent className="bg-white text-green-400 text-xs border-[1px] border-slate-200">
-          {status == true ? (
-            <p className="text-green-400">DB Conected</p>
-          ) : (
-            <p className="text-red-500">DB Conection Lost</p>
+    <Popover>
+      <PopoverTrigger>
+        <div
+          className={clsx(
+            'w-3 h-3 rounded-full shadow-inner m-2',
+            {
+              'bg-green-400': status === true
+            },
+            { 'bg-red-500': status === false }
           )}
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
+        ></div>
+      </PopoverTrigger>
+      <PopoverContent className={'text-xs px-2 py-1'}>
+        {status == true ? (
+          <p className="text-green-400">DB Conected</p>
+        ) : (
+          <p className="text-red-500">DB Conection Lost</p>
+        )}
+      </PopoverContent>
+    </Popover>
   );
 }

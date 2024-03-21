@@ -19,6 +19,7 @@ import {
   TableRow
 } from '@/components/ui/table';
 import clsx from 'clsx';
+import { Icons } from './Icons';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -54,7 +55,7 @@ export function DataTable<TData, TValue>({
   }
 
   return (
-    <div className="mt-10">
+    <div className="mt-5">
       <div className="w-full">
         <hr />
       </div>
@@ -75,7 +76,7 @@ export function DataTable<TData, TValue>({
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
           >
-            {'<'}
+            {<Icons.previous />}
           </Button>
           <div>
             {pagination.pageIndex + 1}
@@ -88,7 +89,7 @@ export function DataTable<TData, TValue>({
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
           >
-            {'>'}
+            {<Icons.next />}
           </Button>
         </div>
       </div>
@@ -123,11 +124,16 @@ export function DataTable<TData, TValue>({
                   data-state={row.getIsSelected() && 'selected'}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className={clsx('text-nowrap',
-                    {'text-green-500': cell.getValue() == 'UP'},{
-                      'text-red-500': cell.getValue() === 'DOWN'
-                    }
-                    )}>
+                    <TableCell
+                      key={cell.id}
+                      className={clsx(
+                        'text-nowrap',
+                        { 'text-green-500': cell.getValue() == 'UP' },
+                        {
+                          'text-red-500': cell.getValue() === 'DOWN'
+                        }
+                      )}
+                    >
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()

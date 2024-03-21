@@ -47,7 +47,7 @@ export function DisplayCardSkeleton() {
           _,
           index // Perulangan sebanyak 10 kali
         ) => (
-          <DisplayCard key={index}>
+          <DisplayCard key={index + 1}>
             <div className="flex font-bold text-white rounded-t-2xl text-center">
               <Skeleton className="w-full rounded-t-[30px] h-10" />
             </div>
@@ -67,12 +67,12 @@ export function DisplayCardSkeleton() {
 export function CardWilayahSkeleton() {
   return (
     <div className="flex flex-col gap-8">
-      {[...Array(5)].map(
+      {[...Array(8)].map(
         (
           _,
           index // Perulangan sebanyak 10 kali
         ) => (
-          <DisplayCard>
+          <DisplayCard key={index + 1}>
             <div className="flex flex-row">
               <div className="w-1/3 text-center text-nowrap font-bold text-white rounded-l-[30px]">
                 <Skeleton className="w-full h-16 rounded-l-[30px]" />

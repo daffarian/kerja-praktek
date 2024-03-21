@@ -11,6 +11,8 @@ import {
   LogOut,
   ListOrdered,
   LucideProps,
+  ChevronRight,
+  ChevronLeft,
   RefreshCcw,
   Search
 } from 'lucide-react';
@@ -29,5 +31,7 @@ export const Icons = {
   maintenance: <Wrench className={primary} />,
   pool: <ListOrdered className={primary} />,
   search: Search,
-  refresh: <RefreshCcw color="white" />
+  refresh: <RefreshCcw color="white" />,
+  next: ChevronRight,
+  previous: ChevronLeft
 };

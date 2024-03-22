@@ -18,7 +18,7 @@ export default function Maps() {
   const position = [-6.2088, 106.8456];
 
   return (
-    <Suspense fallback={'Loading..'}>
+    <Suspense fallback={'Loading...'}>
       <MapContainer
         className="h-60 mx-2 rounded-md static z-0"
         center={[-6.2088, 106.8456]}

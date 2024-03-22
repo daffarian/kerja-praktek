@@ -1,7 +1,7 @@
-'use client'
+'use client';
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-import L from 'leaflet'
+import L from 'leaflet';
 
 const icon = L.divIcon({
   className: 'bg-yellow-500 rounded-full',
@@ -10,7 +10,6 @@ const icon = L.divIcon({
   iconAnchor: [10, 10] // titik ancor marker
 });
 export default function Maps() {
-
   return (
     <MapContainer
       className="h-60 static z-0"
@@ -24,8 +23,11 @@ export default function Maps() {
       ]}
       scrollWheelZoom={true}
     >
-      <TileLayer url="https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png" />
-      <Marker position={[-6.2088, 106.8456]} icon={icon} >
+      <TileLayer
+        attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png"
+      />
+      <Marker position={[-6.2088, 106.8456]} icon={icon}>
         <Popup>Jakarta</Popup>
       </Marker>
     </MapContainer>

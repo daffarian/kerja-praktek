@@ -2,6 +2,18 @@
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
+// import { useCallback, useState, useEffect } from 'react';
+// import { fetchAlat } from '@/lib/data';
+
+// const [data, setData] = useState('');
+// const getData = useCallback(async () => {
+//   const data = await fetchAlat();
+//   setData(data);
+// }, []);
+
+// useEffect(() => {
+//   getData();
+// }, [getData]);
 
 const icon = L.divIcon({
   className: 'bg-yellow-500 rounded-full',
@@ -23,10 +35,7 @@ export default function Maps() {
       ]}
       scrollWheelZoom={true}
     >
-      <TileLayer
-        attribution='&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
-        url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
-      />
+      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={[-6.2088, 106.8456]} icon={icon}>
         <Popup>Jakarta</Popup>
       </Marker>

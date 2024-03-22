@@ -2,15 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer{
-  p, div, ul, li, a, h1, h2, h3{
-    @apply text-slate-500 font-medium
+@layer {
+  p,
+  div,
+  ul,
+  li,
+  a,
+  h1,
+  h2,
+  h3 {
+    @apply text-slate-500 font-medium;
   }
 
   .display-card {
-  border-radius: 30px;
-  background: rgb(255, 255, 255);
-  box-shadow: 15px 15px 30px #bebebe,
-             -15px -15px 30px #ffffff;
-}
+    border-radius: 30px;
+    background: rgb(255, 255, 255);
+    box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+  }
+  .leaflet-control-attribution {
+    display: none !important;
+  }
 }

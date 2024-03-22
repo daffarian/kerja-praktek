@@ -35,7 +35,7 @@ export default function Maps() {
       ]}
       scrollWheelZoom={true}
     >
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <TileLayer detectRetina url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={[-6.2088, 106.8456]} icon={icon}>
         <Popup>Jakarta</Popup>
       </Marker>

@@ -19,7 +19,6 @@ export default function DbStatus() {
   useEffect(() => {
     const interval = setInterval(() => {
       getStatus();
-      console.log(status);
     }, 10000);
 
     // Membersihkan interval saat komponen di-unmount

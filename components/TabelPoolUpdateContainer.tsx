@@ -1,18 +1,17 @@
 'use client';
-import { columns } from '@/lib/definition';
+import { columnsTabelPoolUpdate } from '@/lib/definition';
 import { DataTable } from './Tabel';
-import { fetchLogPing } from '@/lib/data';
+import { fetchPoolUpdate} from '@/lib/data';
 import { useState, useEffect, useCallback } from 'react';
 
-export default function TabelLogPing() {
+export default function TabelPoolUpdteContainer() {
   const [data, setData] = useState([]);
 
   const getData = useCallback(async () => {
-    const data = await fetchLogPing(100);
+    const data = await fetchPoolUpdate(100);
     console.log('get Data');
     setData(data);
   }, []);
-
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -27,7 +26,7 @@ export default function TabelLogPing() {
 
   return (
     <div className="">
-      <DataTable columns={columns} data={data} />
+      <DataTable columns={columnsTabelPoolUpdate} data={data} />
     </div>
   );
 }

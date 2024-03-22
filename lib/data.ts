@@ -40,6 +40,20 @@ export async function fetchLogPing(limit: number) {
   }
 }
 
+// Fetch Pool Update
+export async function fetchPoolUpdate(limit: number) {
+  noStore();
+
+  try {
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
+    const data =
+      await sql`SELECT * FROM tblpool_update LIMIT ${limit}`;
+    return data;
+  } catch (err) {
+    console.error(`fetch alat gagal : ${err}`);
+  }
+}
+
 // Get Status Db
 export async function getStatusDb() {
   noStore();

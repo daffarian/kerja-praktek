@@ -60,16 +60,17 @@ export function DataTable<TData, TValue>({
         <hr />
       </div>
       <div className="flex w-full flex-row items-center py-4 justify-between">
-        <div className="flex flex-row items-center justify-between gap-5">
-          <span className="text-sm">Item per page</span>
+        <div className="flex flex-row items-center justify-between gap-2">
+          <span className="text-sm">Item page</span>
           <input
-            className="w-14 border-[1px] text-sm border-slate-200 rounded-md px-2 py-[6px]"
+            className="w-16 text-center border-[1px] text-sm border-slate-200 rounded-md px-2 py-[6px]"
             onChange={handelPageSizeOnChange}
             type="number"
+            inputMode='numeric'
             defaultValue={pagination.pageSize}
           />
         </div>
-        <div className="flex flex-row gap-2 items-center">
+        <div className="flex flex-row gap-2 items-center justify-betweens">
           <Button
             variant="outline"
             size="sm"
@@ -78,7 +79,7 @@ export function DataTable<TData, TValue>({
           >
             {<Icons.previous />}
           </Button>
-          <div>
+          <div className='w-14'>
             {pagination.pageIndex + 1}
             {' / '}
             {table.getPageCount()}

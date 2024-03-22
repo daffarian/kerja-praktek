@@ -35,7 +35,7 @@ export default function DbStatus() {
           className={clsx(
             'w-3 h-3 rounded-full shadow-inner m-2',
             {
-              'bg-green-400': status === true
+              'bg-green-500': status === true
             },
             { 'bg-red-500': status === false }
           )}

@@ -20,6 +20,6 @@
     box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
   }
   .leaflet-control-attribution {
-    display: none !important;
+    display: hidden !important;
   }
 }

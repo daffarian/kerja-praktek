@@ -15,7 +15,7 @@ import { links } from '@/lib/dataObject';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import DbStatus from './DbStatus';
-
+import { ModeToggle } from './ToggleTheme';
 export default function MobileNav() {
   // State untuk menyimpan status sheet
   const [isOpen, setIsOpen] = useState(false);
@@ -54,6 +54,8 @@ export default function MobileNav() {
         <div className='flex flex-row items-center gap-4'>
           {/* DbStatus */}
           <DbStatus />
+          {/* Theme Toogle */}
+          <ModeToggle/>
           {/* Sheet */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>

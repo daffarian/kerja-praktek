@@ -74,7 +74,7 @@ export async function fetchPoolUpdate(limit: number) {
 export async function getStatusDb() {
   noStore();
   try {
-    await sql.one('SELECT 1', null, { timeout: 10000 }); // Timeout set to 5 seconds (5000 milliseconds)
+    await sql`SELECT 1`;
     return true;
   } catch (err: any) {
     if (err instanceof pgp.errors.QueryResultError) {

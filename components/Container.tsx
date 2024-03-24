@@ -43,7 +43,7 @@ export async function CardWilayahContainer(){
   const wilayah = await fetchWilayah();
   return (
     <div className='grid gap-8 py-10'>
-      {wilayah.map((item:any) => (
+      {wilayah?.map((item:any) => (
         <DisplayCard key={item.id_wilayah}>
           <div className="flex flex-row">
             <div className="w-1/3 bg-sky-500 text-center text-nowrap font-bold text-white px-2 py-5 rounded-l-[30px]">

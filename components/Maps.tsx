@@ -67,8 +67,8 @@ export default function Maps() {
               <div className='font-bold'>{item.nama_wilayah}</div>
               <div>{item.ip}</div>
               <div>{item.nama_alat}</div>
-              <div>{item.status}</div>
-              <div>{item.kecepatan}</div>
+              <div>Status : {item.status}</div>
+              <div>Latency : {item.kecepatan}</div>
             </div>
           </Popup>
         </Marker>

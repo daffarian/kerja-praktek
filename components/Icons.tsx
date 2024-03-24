@@ -11,6 +11,7 @@ import {
   LogOut,
   ListOrdered,
   LucideProps,
+  MoveUp,
   ChevronRight,
   ChevronLeft,
   RefreshCcw,
@@ -33,5 +34,6 @@ export const Icons = {
   search: Search,
   refresh: <RefreshCcw color="white" />,
   next: ChevronRight,
-  previous: ChevronLeft
+  previous: ChevronLeft,
+  up: <MoveUp color='white'/>
 };

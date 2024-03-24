@@ -86,3 +86,30 @@ export async function getStatusDb() {
     return false;
   }
 }
+
+// fetch status up
+export async function fetchStatusUp() {
+  noStore();
+
+  try {
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
+    const data =
+      await sql`SELECT COUNT(*) AS total FROM tblstatus WHERE status='UP';`;
+    return data;
+  } catch (err) {
+    console.error(`fetch status up update gagal : ${err}`);
+  }
+}
+// fetch status up
+export async function fetchStatusDown() {
+  noStore();
+
+  try {
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
+    const data =
+      await sql`SELECT COUNT(*) AS total FROM tblstatus WHERE status='DOWN';`;
+    return data;
+  } catch (err) {
+    console.error(`fetch status up update gagal : ${err}`);
+  }
+}

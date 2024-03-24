@@ -17,6 +17,7 @@ export default function DbStatus() {
   }, []);
 
   useEffect(() => {
+    getStatus();
     const interval = setInterval(() => {
       getStatus();
     }, 10000);
@@ -25,7 +26,7 @@ export default function DbStatus() {
     return () => {
       clearInterval(interval);
     };
-  }, [getStatus]);
+  }, []);
 
   return (
     <Popover>

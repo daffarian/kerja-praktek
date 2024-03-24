@@ -5,7 +5,7 @@ const Maps = dynamic(() => import('@/components/Maps'), {
 
 export default function Page() {
   return (
-    <main className="pt-24">
+    <main className="pt-20">
       <Maps/>
     </main>
   );

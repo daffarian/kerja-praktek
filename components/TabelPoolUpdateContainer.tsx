@@ -14,6 +14,7 @@ export default function TabelPoolUpdteContainer() {
   }, []);
 
   useEffect(() => {
+    getData();
     const intervalId = setInterval(() => {
       getData();
     }, 5000);
@@ -22,7 +23,7 @@ export default function TabelPoolUpdteContainer() {
     return () => {
       clearInterval(intervalId);
     };
-  }, [getData]);
+  }, []);
 
   return (
     <div className="">

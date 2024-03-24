@@ -56,7 +56,7 @@ export default function Maps() {
       scrollWheelZoom={true}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      {data.map((item: any) => (
+      {data?.map((item: any) => (
         <Marker
           key={item.ip}
           position={[item.lat, item.long]}

@@ -7,13 +7,13 @@ import { fetchStatus } from '@/lib/data';
 
 const markerRed = L.divIcon({
   className: 'bg-red-500 rounded-full',
-  html: '<div class="custom-marker">●</div>',
+  html: '<div class="custom-marker"></div>',
   iconSize: [10, 10], // ukuran marker
   iconAnchor: [10, 10] // titik ancor marker
 });
 const markerGreen = L.divIcon({
   className: 'bg-green-500 rounded-full',
-  html: '<div class="custom-marker">●</div>',
+  html: '<div class="custom-marker"></div>',
   iconSize: [10, 10], // ukuran marker
   iconAnchor: [10, 10] // titik ancor marker
 });

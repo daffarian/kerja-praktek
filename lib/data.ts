@@ -15,7 +15,13 @@ export async function fetchStatus() {
     const data = await sql`SELECT * FROM tblstatus`;
     return data;
   } catch (err) {
+    if (err instanceof pgp.errors.QueryResultError) {
+      // Tangani kasus jika query timeout di sini
+      console.error('Query timed out.');
+      return []
+    }
     console.error(`fetch status gagal : ${err}`);
+    return []
   }
 }
 // Fetch Alat

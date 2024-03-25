@@ -14,7 +14,7 @@ export default function LoginForm() {
       </div>
       <div>
         <Link href={'/dashboard'}>
-          <Button variant={'default'} className="inline-flex justify-between w-full">
+          <Button variant={'default'} className="inline-flex hover:dark:bg-sky-950 dark:bg-sky-500 dark:text-slate-100 justify-between w-full">
             Login{Icons.login}
           </Button>
         </Link>

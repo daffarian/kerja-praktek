@@ -37,9 +37,9 @@ export default function MobileNav() {
 
   useEffect(() => {
     if (clientWindowHeight > 10) {
-      setStyle(' shadow-lg px-4');
+      setStyle(' shadow-lg dark:border-slate-600 dark:border-b-[1px] px-4');
     } else {
-      setStyle(``);
+      setStyle(`dark:border-transparent`);
     }
   }, [clientWindowHeight]);
   return (
@@ -65,7 +65,7 @@ export default function MobileNav() {
               </Button>
             </SheetTrigger>
             <SheetContent
-              className="overflow-y-auto h-full justify-between flex flex-col dark:bg-slate-900"
+              className="overflow-y-auto h-full justify-between flex flex-col dark:border-slate-600 dark:bg-slate-900"
               side={'left'}
             >
               <div>
@@ -103,18 +103,18 @@ export default function MobileNav() {
                               {link.name}
                             </AccordionTrigger>
                             <AccordionContent>
-                              <div className="flex flex-col gap-1">
+                              <div className="flex flex-col gap-1 ">
                                 {link.subLinks.map((sublink) => (
                                   <div key={sublink.id}>
-                                    <hr />
+                                    <hr className='dark:border-slate-600'/>
                                     <Link
                                       key={sublink.id}
                                       href={sublink.href}
                                       onClick={() => setIsOpen(!isOpen)}
                                       className={clsx(
-                                        'flex flex-row  pl-10 items-center hover:bg-sky-100 border-slate-200 py-2 rounded-md',
+                                        'flex flex-row  pl-10 items-center hover:bg-sky-100 hover:dark:bg-sky-950 dark:border-slate-600 border-slate-200 py-2 rounded-md',
                                         {
-                                          'bg-sky-100 text-sky-500':
+                                          'bg-sky-100 dark:bg-sky-950 text-sky-500':
                                             sublink.href === pathname
                                         }
                                       )}

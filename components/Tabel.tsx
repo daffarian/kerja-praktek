@@ -57,7 +57,7 @@ export function DataTable<TData, TValue>({
   return (
     <div className="mt-5 pb-10">
       <div className="w-full">
-        <hr />
+        <hr className="dark:border-slate-600" />
       </div>
       <div className="flex w-full flex-row items-center py-4 justify-between">
         <div className="flex flex-row items-center justify-between gap-2">
@@ -94,9 +94,9 @@ export function DataTable<TData, TValue>({
           </Button>
         </div>
       </div>
-      <div className="rounded-md border overflow-x-auto">
+      <div className="rounded-md border dark:border-slate-600 overflow-x-auto">
         <Table className="">
-          <TableHeader className="bg-sky-500 dark:text-slate-100 rounded-t-md hover:bg-sky-500">
+          <TableHeader className="bg-sky-500 dark:border-slate-600 dark:text-slate-100 rounded-t-md hover:bg-sky-500">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id} className="hover:bg-sky-500">
                 {headerGroup.headers.map((header) => {
@@ -117,12 +117,13 @@ export function DataTable<TData, TValue>({
               </TableRow>
             ))}
           </TableHeader>
-          <TableBody>
+          <TableBody className="dark:border-slate-600">
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && 'selected'}
+                  className="dark:border-slate-600"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell

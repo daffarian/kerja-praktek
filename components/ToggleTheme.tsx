@@ -1,36 +1,16 @@
+'use client';
 import * as React from 'react';
 import { Moon, Sun } from 'lucide-react';
-import { useReducer, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
-const initialState = {
-  access:
-    typeof window !== 'undefined'
-      ? window.localStorage.getItem('access')
-      : false,
-  refresh:
-    typeof window !== 'undefined'
-      ? window.localStorage.getItem('refresh')
-      : false,
-  isAuthenticated: null,
-  user: null
-};
-
-function reducer(state:any, action:any) {
-  switch (action.type) {
-    case 'SET_THEME':
-      return {
-        ...state,
-        theme: action.payload
-      };
-    default:
-      return state;
-  }
-}
-
 export function ModeToggle() {
-  const [state, dispatch] = useReducer(reducer, {
-    theme: localStorage.getItem('theme') || 'not-dark'
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const localTheme = localStorage.getItem('theme');
+
+      return localTheme || 'not-dark'; // Default to 'not-dark' if no local storage
+    }
   });
 
   // Client-side preference check (optional)
@@ -39,10 +19,7 @@ export function ModeToggle() {
       const prefersDark = window.matchMedia(
         '(prefers-color-scheme: dark)'
       ).matches;
-      dispatch({
-        type: 'SET_THEME',
-        payload: prefersDark ? 'dark' : 'not-dark'
-      });
+      setTheme(prefersDark ? 'dark' : 'not-dark');
     }
   }, []);
 
@@ -52,24 +29,18 @@ export function ModeToggle() {
       const prefersDark = window.matchMedia(
         '(prefers-color-scheme: dark)'
       ).matches;
-      dispatch({
-        type: 'SET_THEME',
-        payload: prefersDark ? 'dark' : 'not-dark'
-      });
+      setTheme(prefersDark ? 'dark' : 'not-dark');
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('theme', state.theme);
+    localStorage.setItem('theme', theme);
     const root = document.getElementsByTagName('html')[0];
-    root.classList.toggle('dark', state.theme === 'dark');
-  }, [state.theme]);
+    root.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
 
   const toggleTheme = () => {
-    dispatch({
-      type: 'SET_THEME',
-      payload: state.theme === 'dark' ? 'light' : 'dark'
-    });
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
   };
 
   return (

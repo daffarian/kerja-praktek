@@ -44,7 +44,7 @@ export default function Maps({className, children}:{className:any, children:Reac
 
   return (
     <MapContainer
-      className={`h-full relative z-0 border-y-[1px] border-slate-400 ${className}`}
+      className={`h-full static z-0 border-y-[1px] border-slate-400 ${className}`}
       center={[-3.2122243, 108.952847]}
       zoom={5}
       minZoom={3}

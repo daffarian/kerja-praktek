@@ -9,13 +9,13 @@ export default async function Page() {
   const statusUp = await fetchStatusUp();
   const statusDown = await fetchStatusDown();
   return (
-    <main className="pt-14  h-screen flex flex-col">
-      <div className="container py-5">
+    <main className="pt-20  h-screen flex flex-col">
+      <Maps className={''}>
         {/* Status Up */}
-        <div className="flex flex-col gap-2">
-          <div className="bg-green-500 py-2  rounded-xl flex flex-row justify-between">
-            <div className="px-5">
-              <div className="text-white ">Wilayah Status Up</div>
+        <div className="flex flex-row gap-2 w-[20rem] z-[1000] absolute top-8 inset-x-0 mx-auto">
+          <div className="bg-green-500 py-2 w-1/2  rounded-xl flex flex-row justify-between">
+            <div className="px-3">
+              <div className="text-white text-sm">Status Up</div>
               <div className="text-white text-2xl">{statusUp[0].total}</div>
             </div>
             <div className="w-1/3 flex items-center justify-center border-l border-white">
@@ -23,9 +23,10 @@ export default async function Page() {
             </div>
           </div>
 
-          <div className="bg-red-500 py-2  rounded-xl flex flex-row justify-between">
-            <div className="px-5">
-              <div className="text-white ">Wilayah Status Down</div>
+          {/* Status Down */}
+          <div className="bg-red-500 py-2 w-1/2  rounded-xl flex flex-row justify-between">
+            <div className="px-3">
+              <div className="text-white text-sm">Status Down</div>
               <div className="text-white text-2xl">{statusDown[0].total}</div>
             </div>
             <div className="w-1/3 flex items-center justify-center border-r rotate-180 border-white">
@@ -33,8 +34,7 @@ export default async function Page() {
             </div>
           </div>
         </div>
-      </div>
-      <Maps />
+      </Maps>
     </main>
   );
 }

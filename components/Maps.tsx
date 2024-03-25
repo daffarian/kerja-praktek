@@ -20,7 +20,7 @@ const markerGreen = L.divIcon({
 
 
 
-export default function Maps() {
+export default function Maps({className, children}:{className:any, children:React.ReactNode}) {
   const [data, setData] = useState([]);
   const getData = useCallback(async () => {
     const status = await fetchStatus();
@@ -44,7 +44,7 @@ export default function Maps() {
 
   return (
     <MapContainer
-      className="h-full static z-0 border-y-[1px] border-slate-400"
+      className={`h-full relative z-0 border-y-[1px] border-slate-400 ${className}`}
       center={[-3.2122243, 108.952847]}
       zoom={5}
       minZoom={3}
@@ -83,6 +83,7 @@ export default function Maps() {
           </Popup>
         </Marker>
       ))}
+      {children}
     </MapContainer>
   );
 }

@@ -44,9 +44,9 @@ export default function Maps() {
 
   return (
     <MapContainer
-      className="h-72 static z-0 border-y-[1px] border-slate-400"
+      className="h-[500px] static z-0 border-y-[1px] border-slate-400"
       center={[-3.2122243, 108.952847]}
-      zoom={4.5}
+      zoom={5}
       minZoom={3}
       maxZoom={19}
       maxBounds={[

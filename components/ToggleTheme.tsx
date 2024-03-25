@@ -11,6 +11,7 @@ export function ModeToggle() {
 
       return localTheme || 'not-dark'; // Default to 'not-dark' if no local storage
     }
+    return 'not-dark';
   });
 
   // Client-side preference check (optional)

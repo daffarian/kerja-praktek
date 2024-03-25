@@ -1,19 +1,33 @@
-'use client';
-
 import * as React from 'react';
 import { Moon, Sun } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { Button } from '@/components/ui/button';
-
 
 export function ModeToggle() {
   const [theme, setTheme] = useState(() => {
     const localTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
-    return localTheme || (prefersDark ? 'dark' : 'not-dark');
+    return localTheme || 'not-dark'; // Default to 'not-dark' if no local storage
   });
+
+  // Client-side preference check (optional)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const prefersDark = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches;
+      setTheme(prefersDark ? 'dark' : 'not-dark');
+    }
+  }, []);
+
+  // Optional: Set initial theme based on user preference using useLayoutEffect
+  useLayoutEffect(() => {
+    if (typeof window !== 'undefined') {
+      const prefersDark = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches;
+      setTheme(prefersDark ? 'dark' : 'not-dark');
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('theme', theme);

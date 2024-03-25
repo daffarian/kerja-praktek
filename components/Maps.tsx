@@ -45,7 +45,7 @@ export default function Maps() {
   return (
     <MapContainer
       className="h-72 static z-0 border-y-[1px] border-slate-400"
-      center={[-3.2122243, 108.9528470]}
+      center={[-3.2122243, 108.952847]}
       zoom={4.5}
       minZoom={3}
       maxZoom={19}
@@ -63,12 +63,22 @@ export default function Maps() {
           icon={item.status == 'UP' ? markerGreen : markerRed}
         >
           <Popup>
-            <div className='flex flex-col text-left'>
-              <div className='font-bold'>{item.nama_wilayah}</div>
-              <div>{item.ip}</div>
-              <div>{item.nama_alat}</div>
-              <div>Status : {item.status}</div>
-              <div>Latency : {item.kecepatan}</div>
+            <div className="flex flex-col text-left text-slate-500 dark:text-slate-500">
+              <div className="font-bold text-slate-500 dark:text-slate-500">
+                {item.nama_wilayah}
+              </div>
+              <div className="text-slate-500 dark:text-slate-500">
+                {item.ip}
+              </div>
+              <div className="text-slate-500 dark:text-slate-500">
+                {item.nama_alat}
+              </div>
+              <div className="text-slate-500 dark:text-slate-500">
+                Status : {item.status}
+              </div>
+              <div className="text-slate-500 dark:text-slate-500">
+                Latency : {item.kecepatan}
+              </div>
             </div>
           </Popup>
         </Marker>

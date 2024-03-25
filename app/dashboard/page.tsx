@@ -9,8 +9,8 @@ export default async function Page() {
   const statusUp = await fetchStatusUp();
   const statusDown = await fetchStatusDown();
   return (
-    <main className="pt-20 relative  h-screen">
-      <Maps className={''}>
+    <main className="pt-20 static h-screen">
+      <Maps className={'pt-20'}>
         {/* Status Up */}
         <div className="flex flex-row gap-2 w-[16rem] z-[1000] absolute top-4 inset-x-0 mx-auto">
           <div className="bg-green-500 py-2 w-1/2  rounded-xl flex flex-row justify-between">

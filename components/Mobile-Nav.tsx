@@ -43,7 +43,7 @@ export default function MobileNav() {
   }, [clientWindowHeight]);
   return (
     <header
-      className={`fixed w-full top-0 left-0 z-10 transition-all bg-white/60 backdrop-blur-md duration-300 rounded-b-3xl ${style}`}
+      className={`fixed w-full top-0 left-0 z-10 dark:bg-slate-900/60 transition-all bg-white/60 backdrop-blur-md duration-300 rounded-b-3xl ${style}`}
     >
       <div
         className={` w-full flex flex-row items-center justify-between px-4 py-5 `}
@@ -64,7 +64,7 @@ export default function MobileNav() {
               </Button>
             </SheetTrigger>
             <SheetContent
-              className="overflow-y-auto h-full justify-between flex flex-col"
+              className="overflow-y-auto h-full justify-between flex flex-col dark:bg-slate-900"
               side={'left'}
             >
               <div>
@@ -80,9 +80,9 @@ export default function MobileNav() {
                             href={link.href}
                             onClick={() => setIsOpen(!isOpen)}
                             className={clsx(
-                              'flex flex-row gap-2 items-center hover:bg-sky-100 hover:text-sky-500 px-2 py-4 rounded-md',
+                              'flex flex-row gap-2 items-center hover:dark:bg-sky-950 hover:bg-sky-100 hover:text-sky-500 px-2 py-4 rounded-md',
                               {
-                                'bg-sky-100 text-sky-500':
+                                'bg-sky-100 dark:bg-sky-950 text-sky-500':
                                   link.href === pathname
                               }
                             )}

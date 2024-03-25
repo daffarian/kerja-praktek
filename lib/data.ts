@@ -63,7 +63,7 @@ export async function fetchPoolUpdate(limit: number) {
   try {
     // await new Promise((resolve) => setTimeout(resolve, 3000));
     const data =
-      await sql`SELECT * FROM tblpool_update LIMIT ${limit} ORDER BY id ASC`;
+      await sql`SELECT * FROM tblpool_update ORDER BY id ASC LIMIT ${limit}`;
     return data;
   } catch (err) {
     console.error(`fetch pool update gagal : ${err}`);

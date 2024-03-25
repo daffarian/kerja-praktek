@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Mantau App',
   description: 'Aplikasi Monitoring VPN Seluruh Area Kerja PT Delameta Bilano'
 };
+import { cookies } from 'next/headers';
 
 export default function RootLayout({
   children
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <body className={plusJakarta.className}>{children}</body>
+      <body className={`${plusJakarta.className} dark:bg-slate-900`}>
+        {children}
+      </body>
     </html>
   );
 }

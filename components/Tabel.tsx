@@ -63,10 +63,10 @@ export function DataTable<TData, TValue>({
         <div className="flex flex-row items-center justify-between gap-2">
           <span className="text-sm">Item page</span>
           <input
-            className="w-16 text-center border-[1px] text-sm border-slate-200 rounded-md px-2 py-[6px]"
+            className="w-16 text-center border-[1px] text-sm dark:bg-slate-900 border-slate-200 rounded-md px-2 py-[6px]"
             onChange={handelPageSizeOnChange}
             type="number"
-            inputMode='numeric'
+            inputMode="numeric"
             defaultValue={pagination.pageSize}
           />
         </div>
@@ -79,7 +79,7 @@ export function DataTable<TData, TValue>({
           >
             {<Icons.previous />}
           </Button>
-          <div className='w-14'>
+          <div className="w-14 text-center">
             {pagination.pageIndex + 1}
             {' / '}
             {table.getPageCount()}
@@ -96,14 +96,14 @@ export function DataTable<TData, TValue>({
       </div>
       <div className="rounded-md border overflow-x-auto">
         <Table className="">
-          <TableHeader className="bg-sky-500 rounded-t-md hover:bg-sky-500">
+          <TableHeader className="bg-sky-500 dark:text-slate-100 rounded-t-md hover:bg-sky-500">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id} className="hover:bg-sky-500">
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
-                      className=" text-white hover:bg-sky-500"
+                      className=" text-white dark:text-slate-100"
                     >
                       {header.isPlaceholder
                         ? null

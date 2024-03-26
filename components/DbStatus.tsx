@@ -20,13 +20,13 @@ export default function DbStatus() {
     getStatus();
     const interval = setInterval(() => {
       getStatus();
-    }, 10000);
+    }, 5000);
 
     // Membersihkan interval saat komponen di-unmount
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [status]);
 
   return (
     <Popover>

@@ -100,7 +100,7 @@ export default function Maps({className}:{className:any}) {
         <div className="bg-green-500 py-2 w-1/2  rounded-xl flex flex-row justify-between">
           <div className="px-3">
             <div className="text-white text-xs">Status Up</div>
-            <div className="text-white text-lg">{up}</div>
+            <div className="text-white text-lg">{up || "0"}</div>
           </div>
           <div className="w-1/4 flex items-center justify-center border-l border-white">
             {Icons.up}
@@ -111,7 +111,7 @@ export default function Maps({className}:{className:any}) {
         <div className="bg-red-500 py-2 w-1/2  rounded-xl flex flex-row justify-between">
           <div className="px-3">
             <div className="text-white text-xs">Status Down</div>
-            <div className="text-white text-lg">{down}</div>
+            <div className="text-white text-lg">{down || "0"  }</div>
           </div>
           <div className="w-1/4 flex items-center justify-center border-r rotate-180 border-white">
             {Icons.up}

@@ -100,21 +100,21 @@ export async function fetchStatusUp() {
   try {
     // await new Promise((resolve) => setTimeout(resolve, 3000));
     const data =
-      await sql`SELECT COUNT(*) AS total FROM tblstatus WHERE status='UP';`;
-    return data;
+      await sql`SELECT COUNT(*) FROM tblstatus WHERE status='UP';`;
+    return data[0].count;
   } catch (err) {
     console.error(`fetch status up update gagal : ${err}`);
   }
 }
-// fetch status up
+// fetch status down
 export async function fetchStatusDown() {
   noStore();
 
   try {
     // await new Promise((resolve) => setTimeout(resolve, 3000));
     const data =
-      await sql`SELECT COUNT(*) AS total FROM tblstatus WHERE status='DOWN';`;
-    return data;
+      await sql`SELECT COUNT(*) FROM tblstatus WHERE status='DOWN';`;
+    return data[0].count;
   } catch (err) {
     console.error(`fetch status up update gagal : ${err}`);
   }

@@ -4,7 +4,10 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
 import { useCallback, useState, useEffect } from 'react';
 import { fetchStatus } from '@/lib/data';
+import { Icons } from '@/components/Icons';
+import { fetchStatusUp, fetchStatusDown } from '@/lib/data';
 
+// Marker
 const markerRed = L.divIcon({
   className: 'bg-red-500 rounded-full',
   html: '<div class="custom-marker"></div>',
@@ -20,10 +23,18 @@ const markerGreen = L.divIcon({
 
 
 
-export default function Maps({className, children}:{className:any, children:React.ReactNode}) {
+export default function Maps({className}:{className:any}) {
+  const [up, setUp] = useState()
+  const [down, setDown] = useState()
   const [data, setData] = useState([]);
   const getData = useCallback(async () => {
-    const status = await fetchStatus();
+    const [statusUp, statusDown, status] = await Promise.all([
+      fetchStatusUp(),
+      fetchStatusDown(),
+      fetchStatus()
+    ]);
+    setUp(statusUp)
+    setDown(statusDown)
     setData(status);
   }, []);
 
@@ -56,7 +67,7 @@ export default function Maps({className, children}:{className:any, children:Reac
       scrollWheelZoom={true}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      {data?.map((item: any) => (
+      {data.map((item: any) => (
         <Marker
           key={item.ip}
           position={[item.lat, item.long]}
@@ -83,7 +94,30 @@ export default function Maps({className, children}:{className:any, children:Reac
           </Popup>
         </Marker>
       ))}
-      {children}
+      {/* Panel Info */}
+      {/* Status Up */}
+      <div className="flex flex-row gap-2 w-[16rem] z-[1000] absolute top-3 inset-x-0 mx-auto">
+        <div className="bg-green-500 py-2 w-1/2  rounded-xl flex flex-row justify-between">
+          <div className="px-3">
+            <div className="text-white text-xs">Status Up</div>
+            <div className="text-white text-lg">{up}</div>
+          </div>
+          <div className="w-1/4 flex items-center justify-center border-l border-white">
+            {Icons.up}
+          </div>
+        </div>
+
+        {/* Status Down */}
+        <div className="bg-red-500 py-2 w-1/2  rounded-xl flex flex-row justify-between">
+          <div className="px-3">
+            <div className="text-white text-xs">Status Down</div>
+            <div className="text-white text-lg">{down}</div>
+          </div>
+          <div className="w-1/4 flex items-center justify-center border-r rotate-180 border-white">
+            {Icons.up}
+          </div>
+        </div>
+      </div>
     </MapContainer>
   );
 }

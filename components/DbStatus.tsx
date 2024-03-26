@@ -35,15 +35,15 @@ export default function DbStatus() {
           className={clsx(
             'w-3 h-3 rounded-full shadow-inner m-2',
             {
-              'bg-green-500': status === true
+              'bg-[#90ff11]': status === true
             },
             { 'bg-red-500': status === false }
           )}
         ></div>
       </PopoverTrigger>
-      <PopoverContent className={'text-xs px-2 py-1'}>
+      <PopoverContent className={'text-xs px-2 py-1 dark:bg-slate-900'}>
         {status == true ? (
-          <p className="text-green-400">DB Conected</p>
+          <p className="text-[#90ff11]">DB Conected</p>
         ) : (
           <p className="text-red-500">DB Conection Lost</p>
         )}

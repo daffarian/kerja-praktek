@@ -65,7 +65,7 @@ export default function MobileNav() {
               </Button>
             </SheetTrigger>
             <SheetContent
-              className="overflow-y-auto h-full justify-between flex flex-col dark:border-slate-600 dark:bg-slate-900"
+              className="overflow-y-auto h-full justify-between flex flex-col dark:border-0 dark:border-slate-600 dark:bg-slate-900"
               side={'left'}
             >
               <div>

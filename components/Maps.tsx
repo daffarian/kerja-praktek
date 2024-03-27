@@ -52,9 +52,6 @@ export default function Maps({className}:{className:any}) {
     };
   }, []);
 
-  
-
-
   return (
     <MapContainer
       className={`h-full static z-0 border-y-[1px] border-slate-400 ${className}`}
@@ -74,6 +71,7 @@ export default function Maps({className}:{className:any}) {
           key={item.ip}
           position={[item.lat, item.long]}
           icon={item.status == 'UP' ? markerGreen : markerRed}
+          attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         >
           <Popup>
             <div className="flex flex-col text-left text-slate-500 dark:text-slate-500">

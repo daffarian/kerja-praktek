@@ -20,7 +20,7 @@
     @apply dark:border-slate-600 dark:border-[1px];
   }
 
-  .leaflet-control-attribution {
+  /* .leaflet-control-attribution {
     display: none !important;
-  }
+  } */
 }

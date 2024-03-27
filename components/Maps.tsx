@@ -64,7 +64,12 @@ export default function Maps({className}:{className:any}) {
         [85.06, 180]
       ]}
     >
-      <TileLayer url="https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}@2x.png?key=22QvCdWFvSOHrDKkmR9M" />
+      <TileLayer
+        url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}@2x.png?key=22QvCdWFvSOHrDKkmR9M"
+        zoomOffset={-1}
+        detectRetina
+        tileSize={512}
+      />
       {data?.map((item: any) => (
         <Marker
           key={item.ip}

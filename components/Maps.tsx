@@ -7,6 +7,7 @@ import { fetchStatus } from '@/lib/data';
 import { Icons } from '@/components/Icons';
 import { fetchStatusUp, fetchStatusDown } from '@/lib/data';
 
+
 // Marker
 const markerRed = L.divIcon({
   className: 'bg-red-500 rounded-full',
@@ -38,6 +39,7 @@ export default function Maps({className}:{className:any}) {
     setData(status);
   }, []);
 
+  // Interval fetch
   useEffect(() => {
     getData();
     const interval = setInterval(() => {
@@ -66,7 +68,7 @@ export default function Maps({className}:{className:any}) {
       ]}
       scrollWheelZoom={true}
     >
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <TileLayer url="https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}@2x.png?key=22QvCdWFvSOHrDKkmR9M" />
       {data?.map((item: any) => (
         <Marker
           key={item.ip}
@@ -100,7 +102,7 @@ export default function Maps({className}:{className:any}) {
         <div className="bg-green-500 py-2 w-1/2  rounded-xl flex flex-row justify-between">
           <div className="px-3">
             <div className="text-white text-xs">Status Up</div>
-            <div className="text-white text-lg">{up || "0"}</div>
+            <div className="text-white text-lg">{up || '0'}</div>
           </div>
           <div className="w-1/4 flex items-center justify-center border-l border-white">
             {Icons.up}
@@ -111,7 +113,7 @@ export default function Maps({className}:{className:any}) {
         <div className="bg-red-500 py-2 w-1/2  rounded-xl flex flex-row justify-between">
           <div className="px-3">
             <div className="text-white text-xs">Status Down</div>
-            <div className="text-white text-lg">{down || "0"  }</div>
+            <div className="text-white text-lg">{down || '0'}</div>
           </div>
           <div className="w-1/4 flex items-center justify-center border-r rotate-180 border-white">
             {Icons.up}

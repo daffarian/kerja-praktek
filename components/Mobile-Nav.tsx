@@ -44,7 +44,7 @@ export default function MobileNav() {
   }, [clientWindowHeight]);
   return (
     <header
-      className={`fixed w-full top-0 left-0 z-10 dark:bg-slate-900/60 transition-all bg-white/60 backdrop-blur-md duration-300 rounded-b-3xl ${style}`}
+      className={`fixed w-full top-0 left-0 z-10 dark:bg-slate-900/60 transition-all bg-gray-100/60 backdrop-blur-md duration-300 rounded-b-3xl ${style}`}
     >
       <div
         className={` w-full flex flex-row items-center justify-between px-4 py-5 `}
@@ -65,7 +65,7 @@ export default function MobileNav() {
               </Button>
             </SheetTrigger>
             <SheetContent
-              className="overflow-y-auto h-full justify-between flex flex-col dark:border-0 dark:border-slate-600 dark:bg-slate-900"
+              className="overflow-y-auto bg-gray-100 h-full justify-between flex flex-col dark:border-0 dark:border-slate-600 dark:bg-slate-900"
               side={'left'}
             >
               <div>

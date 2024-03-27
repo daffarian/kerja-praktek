@@ -37,13 +37,13 @@ export default function DbStatus() {
             { '!bg-red-500': status === false },
             {
               '!bg-[#90ff11]': status === true
-            },
+            }
           )}
         ></div>
       </PopoverTrigger>
       <PopoverContent className={'text-xs px-2 py-1 dark:bg-slate-900'}>
         {status == true ? (
-          <p className="text-[#7cc925]">DB Conected</p>
+          <p className="text-[#9ef13e]">DB Conected</p>
         ) : (
           <p className="text-red-500">DB Conection Lost</p>
         )}

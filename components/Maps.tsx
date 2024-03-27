@@ -10,13 +10,13 @@ import { fetchStatusUp, fetchStatusDown } from '@/lib/data';
 
 // Marker
 const markerRed = L.divIcon({
-  className: 'bg-red-500 rounded-full',
+  className: 'bg-red-500 border-[1px] border-black rounded-full',
   html: '<div class="custom-marker"></div>',
   iconSize: [10, 10], // ukuran marker
   iconAnchor: [10, 10] // titik ancor marker
 });
 const markerGreen = L.divIcon({
-  className: 'bg-green-500 rounded-full',
+  className: 'bg-green-500 border-[1px] border-black rounded-full',
   html: '<div class="custom-marker"></div>',
   iconSize: [10, 10], // ukuran marker
   iconAnchor: [10, 10] // titik ancor marker
@@ -63,7 +63,6 @@ export default function Maps({className}:{className:any}) {
         [-85.06, -180],
         [85.06, 180]
       ]}
-      scrollWheelZoom={true}
     >
       <TileLayer url="https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}@2x.png?key=22QvCdWFvSOHrDKkmR9M" />
       {data?.map((item: any) => (

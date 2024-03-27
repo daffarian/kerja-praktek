@@ -7,7 +7,6 @@ import { fetchStatus } from '@/lib/data';
 import { Icons } from '@/components/Icons';
 import { fetchStatusUp, fetchStatusDown } from '@/lib/data';
 
-
 // Marker
 const markerRed = L.divIcon({
   className: 'bg-red-500 border-[1px] border-black rounded-full',
@@ -22,11 +21,9 @@ const markerGreen = L.divIcon({
   iconAnchor: [10, 10] // titik ancor marker
 });
 
-
-
-export default function Maps({className}:{className:any}) {
-  const [up, setUp] = useState()
-  const [down, setDown] = useState()
+export default function Maps({ className }: { className: any }) {
+  const [up, setUp] = useState();
+  const [down, setDown] = useState();
   const [data, setData] = useState([]);
   const getData = useCallback(async () => {
     const [statusUp, statusDown, status] = await Promise.all([
@@ -34,8 +31,8 @@ export default function Maps({className}:{className:any}) {
       fetchStatusDown(),
       fetchStatus()
     ]);
-    setUp(statusUp)
-    setDown(statusDown)
+    setUp(statusUp);
+    setDown(statusDown);
     setData(status);
   }, []);
 
@@ -63,18 +60,22 @@ export default function Maps({className}:{className:any}) {
         [-85.06, -180],
         [85.06, 180]
       ]}
+      scrollWheelZoom
+      inertia
     >
       <TileLayer
         url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}@2x.png?key=22QvCdWFvSOHrDKkmR9M"
         zoomOffset={-1}
         tileSize={512}
+        attribution='<a href="https://www.maptiler.com" ">
+  <img src="https://api.maptiler.com/resources/logo.svg" style="width:55px; alt="MapTiler logo">
+</a>'
       />
       {data?.map((item: any) => (
         <Marker
           key={item.ip}
           position={[item.lat, item.long]}
           icon={item.status == 'UP' ? markerGreen : markerRed}
-          attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         >
           <Popup>
             <div className="flex flex-col text-left text-slate-500 dark:text-slate-500">
